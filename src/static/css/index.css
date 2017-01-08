@@ -1,0 +1,50 @@
+* {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: LightSlateGray  ;
+}
+
+.app {
+    text-align: center;
+}
+
+.board {
+    width: 600px;
+    height: 600px;
+    margin: 30px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.cell {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    line-height: 2.5em;
+    font-size: 80px;
+    box-sizing: border-box;
+}
+
+.cell:hover {
+    background-color: #8de0f7;
+}
+
+.resetbtn {
+    margin-top: 20px;
+}
