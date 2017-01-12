@@ -1,0 +1,11 @@
+const constants = {
+    CELL_CLICKED: 'CELL_CLICKED',
+    INC_MOVE: 'INC_MOVE',
+    CHECK_WINNER: 'CHECK_WINNER',
+    SWAP_PLAYER: 'SWAP_PLAYER',
+    RESET_GAME: 'RESET_GAME',
+    OPEN_DIALOG: 'OPEN_DIALOG',
+    CLOSE_DIALOG: 'CLOSE_DIALOG',
+}
+
+export default constants
