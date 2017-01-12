@@ -12,10 +12,11 @@ import './gameContainer.css'
 class GameContainer extends React.Component {
 
     render() {
+        const {resetGameAction} = this.props
         return (
             <div className="gc">
                 <Header />
-                <Button className="resetbtn" bsStyle="success" onClick={this.props.resetGameAction}>Reset Game</Button>
+                <Button className="resetbtn" bsStyle="success" onClick={resetGameAction}>Reset Game</Button>
                 <ModalDialog {...this.props} />
                 <Board {...this.props} />
             </div>
