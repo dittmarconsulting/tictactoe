@@ -1,7 +1,6 @@
 import React from 'react'
 
-
-export default class Header extends React.Component {
+export default class Board extends React.Component {
 
     constructor() {
         super()
@@ -17,8 +16,7 @@ export default class Header extends React.Component {
 
     cellComponent(cell) {
         return (
-            <div
-                key={cell.id} onClick={() => this.cellClicked(cell.id, cell.text)} className="cell">{cell.text}</div>
+            <div key={cell.id} onClick={() => this.cellClicked(cell.id, cell.text)} className="cell">{cell.text}</div>
         )
     }
 
