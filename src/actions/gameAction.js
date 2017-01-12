@@ -1,24 +1,29 @@
+import C from '../constants'
+import {checkWinner} from '../utility/utility'
+
 // ------------------------------------------
-// GAME ACTIONS
+// GAME ACTION CREATORS
 // ------------------------------------------
 
-export function cellClicked(cellId) {
+export const cellClicked = (cellId)  => {
     return (dispatch, getState) => {
 
         // dispatch the click action
         dispatch({
-            type: 'CELL_CLICKED',
+            type: C.CELL_CLICKED,
             payload: cellId
         })
 
         // dispatch increment move action
         dispatch({
-            type:'INC_MOVE'
+            type: C.INC_MOVE,
+            payload: getState().game.currentMove + 1
         })
 
         // dispatch check for winner action
         dispatch({
-            type:'CHECK_WINNER'
+            type: C.CHECK_WINNER,
+            payload: checkWinner(getState().game)
         })
 
         // check for winner & moves
@@ -26,40 +31,43 @@ export function cellClicked(cellId) {
 
             // dispatch player changed action
             dispatch({
-                type:'PLAYER_CHANGED'
+                type: C.SWAP_PLAYER,
+                payload: (getState().game.currentPlayer === getState().game.playerASymbol)
+                    ? getState().game.playerBSymbol
+                    : getState().game.playerASymbol
             })
 
         } else {
 
             // dispatch open winner dialog action
             dispatch({
-                type:'OPEN_DIALOG'
+                type: C.OPEN_DIALOG
             })
         }
     }
 }
 
-export function resetGame() {
+export const resetGame = () => {
     return {
-        type: 'RESET_GAME'
+        type: C.RESET_GAME
     }
 }
 
 // ------------------------------------------
-// WINNER DIALOG ACTION
+// WINNER DIALOG ACTION CREATOR
 // ------------------------------------------
 
-export function closeDialog() {
+export const closeDialog = () => {
     return (dispatch, getState) => {
 
         // dispatch action to close the dialog
         dispatch({
-            type:'CLOSE_DIALOG'
+            type: C.CLOSE_DIALOG
         })
 
         // dispatch action to reset the game
         dispatch({
-            type:'RESET_GAME'
+            type: C.RESET_GAME
         })
     }
 }
