@@ -15,27 +15,28 @@ const customStyles = {
 
 Modal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.8)';
 
-export default class ModalDialog extends React.Component {
 
-    render() {
-        const {showDialog, currentPlayer, winnerFound} = this.props.game
-        // assign an empty winner text
-        let winnerText = null
-        // populate winner text based on state conditions
-        if(winnerFound) {
-            winnerText = 'Player `' + currentPlayer + '` won! Congratulation ...'
-        } else {
-            winnerText = 'It seems you reached an impasse!'
-        }
-        return (
-            <Modal
-                isOpen={showDialog}
-                onRequestClose={this.props.closeDialogAction}
-                style={customStyles}
-                contentLabel='Winner Modal'>
-                <h2>{winnerText}</h2>
-                <Button className="resetbtn" bsStyle="primary" onClick={this.props.closeDialogAction}> Play Again ? </Button>
-            </Modal>
-        )
+const ModalDialog = (props) => {
+    const {showDialog, currentPlayer, winnerFound} = props.game
+    const {closeDialogAction} = props
+    // assign an empty winner text
+    let winnerText = null
+    // populate winner text based on state conditions
+    if(winnerFound) {
+        winnerText = 'Player `' + currentPlayer + '` won! Congratulation ...'
+    } else {
+        winnerText = 'It seems you reached an impasse!'
     }
+    return (
+        <Modal
+            isOpen={showDialog}
+            onRequestClose={closeDialogAction}
+            style={customStyles}
+            contentLabel='Winner Modal'>
+            <h2>{winnerText}</h2>
+            <Button className="resetbtn" bsStyle="primary" onClick={closeDialogAction}> Play Again ? </Button>
+        </Modal>
+    )
 }
+
+export default ModalDialog
