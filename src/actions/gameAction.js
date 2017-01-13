@@ -3,8 +3,11 @@ import {openDialog} from './dialogAction'
 import {checkWinner} from '../utility/utility'
 
 
-export const cellClicked = (cellId)  => {
+export const cellClicked = (cellId, cellText)  => {
     return (dispatch, getState) => {
+
+        // do nothing if cell is NOT null to avoid overriding cell
+        if(cellText) return
 
         // dispatch the click action
         dispatch({
