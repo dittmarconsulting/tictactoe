@@ -2,7 +2,7 @@ import C from '../constants'
 import initState from '../initState'
 
 
-export default function game(state=initState, action) {
+const gameReducer = (state=initState, action) => {
     switch(action.type) {
 
         // in case someone of a cell click action call
@@ -74,3 +74,5 @@ export default function game(state=initState, action) {
         default: return state
     }
 }
+
+export default gameReducer
