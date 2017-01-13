@@ -1,15 +1,6 @@
-import cells from '../data/cells'
 import C from '../constants'
+import initState from '../initState'
 
-const initState = {
-    playerASymbol: 'X',
-    playerBSymbol: 'O',
-    currentPlayer: 'X',
-    winnerFound: false,
-    currentMove: 0,
-    cells: cells,
-    showDialog: false
-}
 
 export default function game(state=initState, action) {
     switch(action.type) {
@@ -73,7 +64,7 @@ export default function game(state=initState, action) {
         case C.RESET_GAME : {
             return {
                 ...state,
-                cells: cells,
+                cells: initState.cells,
                 currentPlayer: 'X',
                 currentMove: 0,
                 winnerFound: false
