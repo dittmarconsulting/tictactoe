@@ -56,7 +56,8 @@ const resetGame = (state) => {
     }
 }
 
-const gameReducer = (state=initState, action) => {
+// all reducers for the game
+export const gameReducer = (state=initState, action) => {
     switch(action.type) {
 
         // in case of a cell click action call
@@ -71,12 +72,6 @@ const gameReducer = (state=initState, action) => {
         // in case of a check winner action call
         case C.CHECK_WINNER : return checkWinner(state, action)
 
-        // in case of an open dialog action call
-        case C.OPEN_DIALOG : return showDialog(state, true)
-
-        // in case of a close dialog action call
-        case C.CLOSE_DIALOG : return showDialog(state, false)
-
         // in case of a reset game action call
         case C.RESET_GAME : return resetGame(state)
 
@@ -84,4 +79,16 @@ const gameReducer = (state=initState, action) => {
     }
 }
 
-export default gameReducer
+// all reducers for the dialog
+export const dialogReducer = (state=initState, action) => {
+    switch(action.type) {
+
+        // in case of an open dialog action call
+        case C.OPEN_DIALOG : return showDialog(state, true)
+
+        // in case of a close dialog action call
+        case C.CLOSE_DIALOG : return showDialog(state, false)
+
+        default: return state
+    }
+}
