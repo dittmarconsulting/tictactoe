@@ -1,9 +1,7 @@
 import C from '../constants'
+import {openDialog} from './dialogAction'
 import {checkWinner} from '../utility/utility'
 
-// ------------------------------------------
-// GAME ACTION CREATORS
-// ------------------------------------------
 
 export const cellClicked = (cellId)  => {
     return (dispatch, getState) => {
@@ -39,10 +37,8 @@ export const cellClicked = (cellId)  => {
 
         } else {
 
-            // dispatch open winner dialog action
-            dispatch({
-                type: C.OPEN_DIALOG
-            })
+            // change text & open dialog action
+            dispatch(openDialog())
         }
     }
 }
@@ -53,21 +49,3 @@ export const resetGame = () => {
     }
 }
 
-// ------------------------------------------
-// WINNER DIALOG ACTION CREATOR
-// ------------------------------------------
-
-export const closeDialog = () => {
-    return (dispatch, getState) => {
-
-        // dispatch action to close the dialog
-        dispatch({
-            type: C.CLOSE_DIALOG
-        })
-
-        // dispatch action to reset the game
-        dispatch({
-            type: C.RESET_GAME
-        })
-    }
-}
