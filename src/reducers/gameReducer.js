@@ -42,7 +42,7 @@ const checkWinner = (state, action) => {
 const resetGame = (state) => {
     return {
         ...state,
-        cells: initState.cells,
+        cells: initState.gameState.cells,
         currentPlayer: 'X',
         currentMove: 0,
         winnerFound: false
