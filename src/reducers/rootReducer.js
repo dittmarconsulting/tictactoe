@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux'
-import game from './gameReducer'
+import {gameReducer, dialogReducer} from './gameReducer'
 
 export default combineReducers({
-    game
+    game: gameReducer,
+    dialog: dialogReducer
 })
