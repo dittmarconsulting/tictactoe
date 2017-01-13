@@ -12,7 +12,6 @@ import './gameContainer.css'
 class GameContainer extends React.Component {
 
     render() {
-        console.log(this.props)
         const {resetGameAction} = this.props
         return (
             <div className="gc">
