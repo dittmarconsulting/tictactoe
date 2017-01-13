@@ -3,7 +3,7 @@ import C from '../constants'
 export const openDialog = () => {
     return (dispatch, getState) => {
 
-        // assign an empty winner text
+        // create dialog text
         let winnerText = (getState().game.winnerFound) ?
             'Player `' + getState().game.currentPlayer + '` won! Congratulation ...' :
             'It seems we reached an impasse!'
@@ -11,7 +11,7 @@ export const openDialog = () => {
         // dispatch action to change the dialog text
         dispatch({
             type: C.CHANGE_DIALOG_TEXT,
-            payload: 'dssd'
+            payload: winnerText
         })
 
         // dispatch action to close the dialog
@@ -22,7 +22,7 @@ export const openDialog = () => {
 }
 
 export const closeDialog = () => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
 
         // dispatch action to close the dialog
         dispatch({
