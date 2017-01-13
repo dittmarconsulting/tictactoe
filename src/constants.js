@@ -6,6 +6,7 @@ const constants = {
     RESET_GAME: 'RESET_GAME',
     OPEN_DIALOG: 'OPEN_DIALOG',
     CLOSE_DIALOG: 'CLOSE_DIALOG',
+    CHANGE_DIALOG_TEXT: 'CHANGE_DIALOG_TEXT'
 }
 
 export default constants
