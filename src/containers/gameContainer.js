@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux'
 import { Button } from 'react-bootstrap';
-import {cellClicked, closeDialog, resetGame} from '../actions/gameAction'
+import {cellClicked, resetGame} from '../actions/gameAction'
+import {closeDialog} from '../actions/dialogAction'
 
 import Header from '../components/header'
 import Board from '../components/board'
