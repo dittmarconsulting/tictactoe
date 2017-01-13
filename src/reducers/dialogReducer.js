@@ -9,10 +9,9 @@ const showDialog = (state, action) => {
 }
 
 const changeDialogText = (state, action) => {
-    console.log('changeDialogText', action.payload)
     return {
         ...state,
-        dialogMessage: action
+        dialogMessage: action.payload
     }
 }
 
