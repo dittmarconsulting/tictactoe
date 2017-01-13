@@ -12,6 +12,7 @@ import './gameContainer.css'
 class GameContainer extends React.Component {
 
     render() {
+        console.log(this.props)
         const {resetGameAction} = this.props
         return (
             <div className="gc">
@@ -25,7 +26,8 @@ class GameContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    game: state.game
+    game: state.game,
+    dialog: state.dialog
 })
 
 const mapDispatchToProps = (dispatch) => ({
