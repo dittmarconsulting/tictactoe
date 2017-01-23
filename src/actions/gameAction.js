@@ -40,8 +40,13 @@ export const cellClicked = (cellId, cellText)  => {
 
         } else {
 
+            // create dialog text
+            let dialogText = (getState().game.winnerFound) ?
+                'Player `' + getState().game.currentPlayer + '` won! Congratulation ...' :
+                'It seems we reached an impasse!'
+
             // change text & open dialog action
-            dispatch(openDialog())
+            dispatch(openDialog(dialogText))
         }
     }
 }
