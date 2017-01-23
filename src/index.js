@@ -11,4 +11,4 @@ ReactDOM.render(
         <GameContainer />
     </Provider>,
   document.getElementById('root')
-);
+)
