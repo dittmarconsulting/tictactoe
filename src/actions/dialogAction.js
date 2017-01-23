@@ -1,17 +1,12 @@
 import C from '../constants'
 
-export const openDialog = () => {
-    return (dispatch, getState) => {
-
-        // create dialog text
-        let winnerText = (getState().game.winnerFound) ?
-            'Player `' + getState().game.currentPlayer + '` won! Congratulation ...' :
-            'It seems we reached an impasse!'
+export const openDialog = (dialogText) => {
+    return (dispatch) => {
 
         // dispatch action to change the dialog text
         dispatch({
             type: C.CHANGE_DIALOG_TEXT,
-            payload: winnerText
+            payload: dialogText
         })
 
         // dispatch action to close the dialog
